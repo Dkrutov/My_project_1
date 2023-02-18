@@ -11,6 +11,7 @@ public class Main {
         System.out.println("Integer:" + i);
         System.out.println("String:" + text);
         System.err.println("This is error stream");
+        System.out.println("1");
         scanner.close();
     }
 }
