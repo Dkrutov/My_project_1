@@ -15,9 +15,28 @@ public class Calc {
         System.out.println("Введите второе значение: ");
         double b = scanner.nextDouble();
         System.out.println("Вы ввели первое значение: " + a  + "\nВы ввели первое значение: " + b);
-        System.out.println("Выберите тип операции с числами: ");
-        double с = a + b;
-        System.out.printf("Сложение: %.4f",с);    }
+        System.out.println("Выберите тип операции с числами: '+', '-', '*', '/'");
+        char znak = scanner.next().charAt(0);
+        System.out.println("Тип операции с числами: " + znak);
+      if (znak == '+') {
+            double с = a + b;
+            System.out.printf("Сложение: %.4f",с);
+        }
+        else if (znak == '-') {
+          double с = a - b;
+          System.out.printf("Вычитание: %.4f",с);
+        }
+      else if (znak == '*') {
+          double с = a * b;
+          System.out.printf("Умножение: %.4f",с);
+      }
+      else if (znak == '/') {
+          double с = a / b;
+          System.out.printf("Деление: %.4f",с);
+      }
+
+        }
+
 
     public String calc() {
         return "";
