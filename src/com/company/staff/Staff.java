@@ -2,9 +2,11 @@ package com.company.staff;
 
 public abstract class Staff {
     private String brand;
-    private String price;
+    private Double price;
 
-    public Staff(String brand, String price) {
+    public Staff() {}
+
+    public Staff(String brand, Double price) {
         this.brand = brand;
         this.price = price;
     }
@@ -17,11 +19,11 @@ public abstract class Staff {
         this.brand = brand;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

@@ -1,14 +1,14 @@
-package com.company;
+package com.company.lesson3;
 import java.util.Scanner;
 /**
  * Created by Dmitriy on 21.02.23
  * Этот класс базовый для калькулятора
  * @author Dmitry Krutov
  * @see #
- * @see #main(String[])
+ * @see #
  */
 public class Calc {
-    public static void main(String[] args) {
+    public static void calculate() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое значение: ");
         double a = scanner.nextDouble();
@@ -32,13 +32,11 @@ public class Calc {
       }
       else if (znak == '/') {
           double с = a / b;
-          System.out.printf("Деление: %.4f",с);
+          ;
+      } else {
+          System.out.printf("Введен неверный знак");
       }
 
         }
 
-
-    public String calc() {
-        return "";
-    }
 }

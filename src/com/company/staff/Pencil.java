@@ -3,7 +3,9 @@ package com.company.staff;
 public class Pencil extends Staff {
     private String size;
 
-    public Pencil(String brand, String price, String size) {
+    public Pencil() {}
+
+    public Pencil(String brand, Double price, String size) {
         super(brand, price);
         this.size = size;
     }
