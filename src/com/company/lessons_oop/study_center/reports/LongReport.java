@@ -15,17 +15,16 @@ public class LongReport implements Report {
         Program program = currentStudent.getStudentProgram();
         Date programStartDate = program.getProgramStartDate();
         Date programStopDate = program.getProgramEndDate();
-        StringBuilder shortInfo = new StringBuilder();
-        shortInfo.append("STUDENT: " + currentStudent.getName() + " " + currentStudent.getSurName() + "\n");
-        shortInfo.append("STUDENT PROGRAM:" + program.getProgramName() + "\n");
-        if (program.getProgramStartDate()!=null) {
-            shortInfo.append("START " + format.format(programStartDate) + "\n");
-            shortInfo.append("PROGRAM DURATION: " + program.countProgramDuration() + " hours" + "\n");
-            shortInfo.append(program.showProgramProgress(programStartDate, programStopDate));
+        StringBuilder fullInfo = new StringBuilder();
+        fullInfo.append("STUDENT: " + currentStudent.getName() + " " + currentStudent.getSurName() + "\n");
+        fullInfo.append("STUDENT PROGRAM:" + program.getProgramName() + "\n");
+        fullInfo.append("START " + format.format(programStartDate) + "\n");
+        fullInfo.append("PROGRAM DURATION: " + program.countProgramDuration() + " hours" + "\n");
+            if(program.getCourses() !=null) {
+            fullInfo.append(program.showProgramCourses());
         } else {
-            shortInfo.append("No assigned courses for this student \n");
+            fullInfo.append("No assigned courses for this student \n");
         }
-        System.out.println(shortInfo.toString());
-        21 минута
+        System.out.println(fullInfo.toString());
     }
 }

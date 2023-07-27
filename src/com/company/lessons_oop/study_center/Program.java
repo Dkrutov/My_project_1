@@ -12,7 +12,7 @@ public class Program {
     private Date programEndDate;
     private String programName;
     private List<Course> courses = new ArrayList<>();
-    private Calendar calendar = Calendar.getInstance();
+
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
     public Program(String programStartDate, String programName) {
@@ -54,6 +54,7 @@ public class Program {
     }
 
     public void  calculateProgramEndDate() {
+        Calendar calendar = Calendar.getInstance();
         int programDurationInHour = countProgramDuration();
         calendar.setTime(this.programStartDate);
         calendar.add(Calendar.DAY_OF_MONTH, programDurationInHour/8);
@@ -68,11 +69,12 @@ public class Program {
     }
 
     public String showProgramProgress(Date startTime, Date endTime) {
+        Calendar calendar = Calendar.getInstance();
         Date currentDate = calendar.getTime();
         if (currentDate.before(startTime)) {
             return "Program has been started yet \n";
         } else if (currentDate.after(endTime)) {
-            return "Program has been finished already \n"
+            return "Program has been finished already \n";
         } else {
             return "Program is in progress \n";
         }
